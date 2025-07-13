@@ -28,7 +28,7 @@ services:
       - "traefik.http.routers.plasmic.rule=Host(`test.plasmic.begemotix.cloud`)"
       - "traefik.http.routers.plasmic.entrypoints=websecure"
       - "traefik.http.routers.plasmic.tls.certResolver=letsencrypt"
-      - "traefik.http.services.plasmic.loadbalancer.server.port=3000"
+      - "traefik.http.services.plasmic.loadbalancer.server.port=3003"
     ports:
       - "3003:3003"
       - "3004:3004"
