@@ -21,6 +21,14 @@ services:
     build:
       context: .
       dockerfile: ./platform/wab/tools/docker-dev/Dockerfile
+    networks:
+      - dokploy-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.plasmic.rule=Host(`test.plasmic.begemotix.cloud`)"
+      - "traefik.http.routers.plasmic.entrypoints=websecure"
+      - "traefik.http.routers.plasmic.tls.certResolver=letsencrypt"
+      - "traefik.http.services.plasmic.loadbalancer.server.port=3000"
     ports:
       - "3003:3003"
       - "3004:3004"
@@ -39,3 +47,7 @@ services:
 
 volumes:
   postgres_data:
+  
+networks:
+  dokploy-network:
+    external: true
