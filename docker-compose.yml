@@ -5,6 +5,10 @@ services:
     restart: always
     environment:
       - POSTGRES_PASSWORD=SEKRET
+    networks:
+      - dokploy-network
+    labels:
+      - "traefik.enable=false"
     ports:
       - "54323:5432"
     volumes:
