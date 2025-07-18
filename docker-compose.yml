@@ -34,10 +34,10 @@ services:
       - "traefik.http.routers.plasmic.tls.certResolver=letsencrypt"
       - "traefik.http.services.plasmic.loadbalancer.server.port=3003"
     ports:
-      - "3003:3003"
-      - "3004:3004"
-      - "3005:3005"
-      - "9229:9229"
+      - "3003"
+      - "3004"
+      - "3005"
+      - "9229"
     depends_on:
       plasmic-db:
         condition: service_healthy
