@@ -10,7 +10,7 @@ services:
     labels:
       - "traefik.enable=false"
     ports:
-      - "54323:5432"
+      - "5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./platform/wab/tools/docker-dev/db-setup.bash:/docker-entrypoint-initdb.d/db-setup.sh
