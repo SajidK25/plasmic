@@ -43,7 +43,7 @@ services:
         condition: service_healthy
     environment:
       - DATABASE_URI=postgres://wab:SEKRET@localhost:5432/wab
-      - WAB_DBNAME=plasmic-db
+      - WAB_DBNAME=wab
       - WAB_DBPASSWORD=SEKRET
       - NODE_ENV=development
     tty: true
